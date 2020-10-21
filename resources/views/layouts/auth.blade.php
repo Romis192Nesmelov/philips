@@ -96,7 +96,7 @@
                 <img src="/images/twix.png">
             </div>
             <div class="col-md-6 col-sm-12 col-xs-12">
-                <h1 class="section-title">Заправьтесь подарками!<br>Выгода до 60% на технику Philips!</h1>
+                <h1 class="section-title">Заправьтесь подарками!<br>Выгода до 50% на технику Philips!</h1>
                 {{--<div class="title-disclamer">Бесплатная доставка!<sup>*</sup></div>--}}
                 <div class="promo-text">Для активации скидки зарегистрируйте код с купона и закажите понравившиеся вам товары.</div>
 

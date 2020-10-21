@@ -2,7 +2,7 @@
 
 @section('content')
 
-@for ($i=6;$i>=1;$i--)
+@for ($i=5;$i>=4;$i--)
     @if (count($promoCodesNotActive) >= $i)
         @include('_modal_block',['id' => 'discount_'.$i, 'value' => $i*10])
     @endif
@@ -88,7 +88,7 @@
 
                 <div class="col-md-6">
                     <div class="discount-buttons">
-                        @for ($i=6;$i>=1;$i--)
+                        @for ($i=5;$i>=4;$i--)
                             @if (count($promoCodesNotActive) >= $i)
                              <!-- class="btn btn-primary" -->
                                 <a href="#discount_{{ $i }}" class="" data-toggle="modal">
@@ -146,7 +146,7 @@
                 <div class="col-md-6">
                     <div id="avaliableDiscounts">
                         @if (count($avlDis))
-                            @for ($i=6;$i>=1;$i--)
+                            @for ($i=5;$i>=4;$i--)
                                 <?php $value = $i*10;?>
                                 @if (array_key_exists($value, $avlDis))
                                     @if (Request::input('dis_code') != $avlDis[$value])

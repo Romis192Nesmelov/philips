@@ -62,6 +62,7 @@ class CodeController extends BasicController
         $this->validate($request, ['value' => 'required']);
         $countCodes = $request->input('value')/10;
         $promoCodes = PromoCode::where('user_id',Auth::user()->id)->where('activation_time',0)->limit($countCodes)->get();
+        $this->giveMePromoCodes();
 
         if (
             count($this->promoCodesNotActive) <= Config::get('app.max_discount_codes') &&

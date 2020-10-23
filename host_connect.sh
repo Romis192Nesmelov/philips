@@ -1,1 +1,1 @@
-ssh -p 22 root@46.36.217.236 -L 2222:localhost:3306
+ssh -p 22 root@185.4.75.210 -L 2222:localhost:3306

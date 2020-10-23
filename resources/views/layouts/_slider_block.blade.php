@@ -5,7 +5,7 @@
         </div>
         <div class="col-md-6">
             <h2 class="prod-title">{!! $title !!}</h2>
-            <p class="prod-text">{{ $text }}</p>
+            <p class="prod-text">{!! $text !!}</p>
         </div>
     </div>
 </div>

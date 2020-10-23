@@ -1,5 +1,3 @@
-# 0 7 * * 1-5 /usr/bin/python3 /usr/share/nginx/html/fmca/send_stats.py
-
 from pathlib import Path
 import smtplib
 from email.mime.multipart import MIMEMultipart

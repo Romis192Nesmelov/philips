@@ -1,5 +1,6 @@
 # 0 7 * * 1-5 /usr/bin/python3 /usr/share/nginx/html/fmca/send_stats.py
 
+from pathlib import Path
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -9,15 +10,23 @@ from email.mime.base import MIMEBase
 from os.path import basename
 import os
 
-EMAILFROM = "admin@philips-shell-promo.ru"
-SMTP_SERVER = "smtp.beget.com:25"
-SMTP_USERNAME = "admin@philips-shell-promo.ru"
-SMTP_PASSWORD = "********"
+root_dir = Path(__file__).resolve().parent.parent
+env = root_dir / ".env"
+params = {line.strip().split('=', maxsplit=1)[0]: line.strip().split('=', maxsplit=1)[1]
+          for line in open(env)
+          if line.strip()}
+
+EMAILFROM = params["MAIL_USERNAME"]
+SMTP_SERVER = f'{params["MAIL_HOST"]}:{params["MAIL_PORT"]}'
+SMTP_USERNAME = params["MAIL_USERNAME"]
+SMTP_PASSWORD = params["MAIL_PASSWORD"]
 
 TO = ('victor.makarov@freshmindcom.ru',)
-      # 'info@freshmindcom.ru',)
-      # 'd.shumeiko@aristosgroup.ru',
-      # 'vitaly.malyshev@philips.com', )
+
+
+# 'info@freshmindcom.ru',)
+# 'd.shumeiko@aristosgroup.ru',
+# 'vitaly.malyshev@philips.com', )
 
 def send_email(subject='', text='', emailto=(), filesToSend=(), html=False):
     '''
@@ -65,10 +74,8 @@ def send_email(subject='', text='', emailto=(), filesToSend=(), html=False):
 
 if __name__ == '__main__':
     stat_file = os.path.join(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'stats'), 'stat_action.csv')
-    send_email(subject='Статистика philips-shell-promo.ru', 
-               text='В приложенном файле находится статистика акции с сайта philips-shell-promo.ru.\n', 
-               emailto=TO, 
-               filesToSend=(stat_file,), 
+    send_email(subject='Статистика philips-shell-promo.ru',
+               text='В приложенном файле находится статистика акции с сайта philips-shell-promo.ru.\n',
+               emailto=TO,
+               filesToSend=(stat_file,),
                html=False)
-
-

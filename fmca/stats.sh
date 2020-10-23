@@ -32,6 +32,8 @@ cat $TEMPDIR/stat_action_head.csv $TEMPDIR/stat_action_body.csv > $STATSDIR/stat
 # zip -j $STATSDIR/stat_market.zip $TEMPDIR/stat_market.csv
 # zip -j $STATSDIR/stat_permitted_promo.zip $TEMPDIR/stat_permitted_promo.csv
 
+python3 /usr/share/nginx/html/fmca/send_stats.py
+
 # crontab -e
 # 0 6 * * * /usr/share/nginx/html/fmca/stats.sh
 

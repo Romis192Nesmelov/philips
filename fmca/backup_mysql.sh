@@ -13,7 +13,7 @@ then
 fi
 
 find $BACKUPDIR/* -mmin +$((60*24)) -exec rm {} \;
-mysqldump --single-transaction -u root -promis --all-databases | gzip > $BACKUPDIR/$date-backup.sql.gz
+mysqldump --single-transaction -u philips -p******** --all-databases | gzip > $BACKUPDIR/$date-backup.sql.gz
 
 # crontab -e
 # 15,45 * * * * /usr/share/nginx/html/fmca/backup_mysql.sh

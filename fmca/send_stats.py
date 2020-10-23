@@ -12,7 +12,7 @@ import os
 EMAILFROM = "admin@philips-shell-promo.ru"
 SMTP_SERVER = "smtp.beget.com:25"
 SMTP_USERNAME = "admin@philips-shell-promo.ru"
-SMTP_PASSWORD = "eishoh3Y"
+SMTP_PASSWORD = "********"
 
 TO = ('victor.makarov@freshmindcom.ru',)
       # 'info@freshmindcom.ru',)

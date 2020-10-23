@@ -117,32 +117,5 @@ LEFT OUTER JOIN discount40_groups ON dates.Date = discount40_groups.Date
 LEFT OUTER JOIN discount50_groups ON dates.Date = discount50_groups.Date 
 LEFT OUTER JOIN discount60_groups ON dates.Date = discount60_groups.Date 
 LEFT OUTER JOIN orders_groups ON dates.Date = orders_groups.Date 
-ORDER BY dates.Date
-INTO OUTFILE '/usr/share/nginx/html/fmca/temp/stat_action_body.csv' CHARACTER SET cp1251 FIELDS TERMINATED BY ';' ENCLOSED BY '\"' LINES TERMINATED BY '\n';
-
-SELECT 'Date', 
-       'Registrations', 
-       'Promocodes', 
-       'Discount10', 
-       'Discount20', 
-       'Discount30', 
-       'Discount40', 
-       'Discount50', 
-       'Discount60', 
-       'Orders' 
-INTO OUTFILE '/usr/share/nginx/html/fmca/temp/stat_action_head.csv' CHARACTER SET cp1251 FIELDS TERMINATED BY ';' ENCLOSED BY '\"' LINES TERMINATED BY '\n';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ORDER BY dates.Date;
 

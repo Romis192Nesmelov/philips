@@ -22,7 +22,7 @@ fi
 rm -f $TEMPDIR/*
 rm -f $STATSDIR/*
 
-mysql --database=philips-shell -u root -promis  -e "SOURCE $FMCADIR/stats.sql"
+mysql --database=philips -u philips -pthaingeixai9Shaachea  -e "SOURCE $FMCADIR/stats.sql"
 
 cat $TEMPDIR/stat_action_head.csv $TEMPDIR/stat_action_body.csv > $STATSDIR/stat_action.csv
 #cat $TEMPDIR/stat_market_head.csv $TEMPDIR/stat_market_body.csv > $STATSDIR/stat_market.csv

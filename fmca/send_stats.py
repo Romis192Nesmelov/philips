@@ -14,10 +14,10 @@ SMTP_SERVER = "smtp.beget.com:25"
 SMTP_USERNAME = "admin@philips-shell-promo.ru"
 SMTP_PASSWORD = "eishoh3Y"
 
-TO = ('victor.makarov@freshmindcom.ru',
-      'info@freshmindcom.ru',
-      'd.shumeiko@aristosgroup.ru',
-      'vitaly.malyshev@philips.com', )
+TO = ('victor.makarov@freshmindcom.ru',)
+      # 'info@freshmindcom.ru',)
+      # 'd.shumeiko@aristosgroup.ru',
+      # 'vitaly.malyshev@philips.com', )
 
 def send_email(subject='', text='', emailto=(), filesToSend=(), html=False):
     '''

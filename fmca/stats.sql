@@ -37,62 +37,62 @@ DROP PROCEDURE `date_between`;
 
 CREATE TEMPORARY TABLE `users_groups` AS (
 	SELECT DATE(created_at) AS 'Date', COUNT(created_at) AS 'Registrations'
-	FROM `philips-shell`.users 
+	FROM `philips`.users
 	GROUP BY Date
 	);
 
 CREATE TEMPORARY TABLE `promocodes_groups` AS (
 	SELECT FROM_UNIXTIME(on_time, '%Y-%m-%d') AS 'Date', COUNT(on_time) AS 'Promocodes'
-	FROM `philips-shell`.promo_codes 
+	FROM `philips`.promo_codes
 	WHERE on_time > 0
 	GROUP BY Date
 	);
 
 CREATE TEMPORARY TABLE `discount10_groups` AS (
 	SELECT FROM_UNIXTIME(on_time, '%Y-%m-%d') AS 'Date', COUNT(on_time) AS 'Discount10'
-	FROM `philips-shell`.discount_codes 
+	FROM `philips`.discount_codes
 	WHERE on_time > 0 AND discount = 10
 	GROUP BY Date
 	);
 
 CREATE TEMPORARY TABLE `discount20_groups` AS (
 	SELECT FROM_UNIXTIME(on_time, '%Y-%m-%d') AS 'Date', COUNT(on_time) AS 'Discount20'
-	FROM `philips-shell`.discount_codes 
+	FROM `philips`.discount_codes
 	WHERE on_time > 0 AND discount = 20
 	GROUP BY Date
 	);
 
 CREATE TEMPORARY TABLE `discount30_groups` AS (
 	SELECT FROM_UNIXTIME(on_time, '%Y-%m-%d') AS 'Date', COUNT(on_time) AS 'Discount30'
-	FROM `philips-shell`.discount_codes 
+	FROM `philips`.discount_codes
 	WHERE on_time > 0 AND discount = 30
 	GROUP BY Date
 	);
 
 CREATE TEMPORARY TABLE `discount40_groups` AS (
 	SELECT FROM_UNIXTIME(on_time, '%Y-%m-%d') AS 'Date', COUNT(on_time) AS 'Discount40'
-	FROM `philips-shell`.discount_codes 
+	FROM `philips`.discount_codes
 	WHERE on_time > 0 AND discount = 40
 	GROUP BY Date
 	);
 
 CREATE TEMPORARY TABLE `discount50_groups` AS (
 	SELECT FROM_UNIXTIME(on_time, '%Y-%m-%d') AS 'Date', COUNT(on_time) AS 'Discount50'
-	FROM `philips-shell`.discount_codes 
+	FROM `philips`.discount_codes
 	WHERE on_time > 0 AND discount = 50
 	GROUP BY Date
 	);
 
 CREATE TEMPORARY TABLE `discount60_groups` AS (
 	SELECT FROM_UNIXTIME(on_time, '%Y-%m-%d') AS 'Date', COUNT(on_time) AS 'Discount60'
-	FROM `philips-shell`.discount_codes 
+	FROM `philips`.discount_codes
 	WHERE on_time > 0 AND discount = 60
 	GROUP BY Date
 	);
 
 CREATE TEMPORARY TABLE `orders_groups` AS (
 	SELECT FROM_UNIXTIME(activation_time, '%Y-%m-%d') AS 'Date', COUNT(activation_time) AS 'Orders'
-	FROM `philips-shell`.discount_codes 
+	FROM `philips`.discount_codes
 	WHERE activation_time > 0
 	GROUP BY Date
 	);

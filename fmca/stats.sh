@@ -13,7 +13,7 @@ fi
 
 rm -f $STATSDIR/*
 
-mysql --database=philips -u root < stats.sql | sed 's/\t/;/g' > $FMCADIR/stats/stat_action.csv
+mysql --database=philips -u root < $FMCADIR/stats.sql | sed 's/\t/;/g' > $FMCADIR/stats/stat_action.csv
 python3 "$FMCADIR/send_stats.py"
 
 # crontab -e

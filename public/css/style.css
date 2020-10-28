@@ -3,8 +3,6 @@
 
 @font-face {
     font-family: 'centrale_sans';
-    src: url('../fonts/CentraleSans-Book.eot');
-    src: url('../fonts/CentraleSans-Book.eot?#iefix') format('embedded-opentype'),
          url('../fonts/CentraleSans-Book.woff') format('woff'),
          url('../fonts/CentraleSans-Book.ttf') format('truetype'),
          url('../fonts/CentraleSans-Book.svg#CentraleSans-Book') format('svg');
@@ -13,10 +11,7 @@
 }
 @font-face {
   font-family: 'centrale_sans_xbold';
-  src: url('../fonts/CentraleSans-Xbold.eot');
-  src: url('../fonts/CentraleSans-Xbold.eot?#iefix') format('embedded-opentype'),
        url('../fonts/CentraleSans-Xbold.woff') format('woff'),
-       url('../fonts/CentraleSans-Xbold.ttf') format('truetype'),
        url('../fonts/CentraleSans-Xbold.svg#centrale_sans_xbold') format('svg');
   font-weight: normal;
   font-style: normal;
@@ -59,14 +54,16 @@ img {
 .register-page {
   background: #000; }
 
-.max-width {
+.container {
     max-width: 1050px;
     margin: 0 auto;
     position: relative;
 }
 
-.max-width h1.section-title {
+.container h1.section-title {
     font-size: 42px;
+    text-align: center;
+    font-weight: bold;
 }
 
 #pop-up-video {
@@ -92,7 +89,7 @@ img {
 }
 
 #pop-up-video .icon-close  {
-  right: 0px;
+  right: 0;
   top: -20px;
   z-index: 999;
 }
@@ -103,13 +100,14 @@ img {
 .pop-up-overlay {
     position: absolute;
     display: block;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
+    top: 0;
+    bottom: 0;
+    left: 0;
     height: 100%;
     width: 100%;
-    background: #000;und: rgba(0, 0, 0, 0.29);
-    z-index: 999; }
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
 
 .pop-up-form {
     display: block;
@@ -225,13 +223,9 @@ top: 10px;
   clear: both;
   overflow: hidden; }
 
-
-
 .section-01 {
-  max-width: 100%;
-  min-height: 693px;
-   background: url("../images/BG-01.jpg") no-repeat 0% 26%;
-   background-size: cover;
+    max-width: 100%;
+    background-color: #ffd203;
 }
 
 #app-layout .section-01 {
@@ -248,10 +242,10 @@ top: 10px;
     padding-top: 30px;
     z-index: 2;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,ffffff+100&0.65+0,0+100 */
-    background: -moz-linear-gradient(top, rgba(0,0,0,0.65) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+    /*background: -moz-linear-gradient(top, rgba(0,0,0,0.65) 0%, rgba(255,255,255,0) 100%); !* FF3.6-15 *!*/
+    /*background: -webkit-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(255,255,255,0) 100%); !* Chrome10-25,Safari5.1-6 *!*/
+    /*background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(255,255,255,0) 100%); !* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ *!*/
+    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00ffffff',GradientType=0 ); !* IE6-9 *!*/
 }
 
 #app-layout .header {
@@ -321,14 +315,6 @@ top: 10px;
     letter-spacing: -1px;
 }
 
-.title-disclamer {
-    font-family: 'centrale_sans_xbold', Arial, Verdana, sans-serif;
-    font-size: 34px;
-    line-height: 40px;
-    color: #E30E0A;
-    margin: 0 0 5px 0;
-}
-
 .prod-title  {
   font-family: 'centrale_sans_xbold', Arial, Verdana, sans-serif;
 }
@@ -343,6 +329,7 @@ top: 10px;
     font-size: 21px;
     line-height: 26px;
     color: #000000;
+    text-align: center;
     position: relative;
     margin: 0 0 20px 0;
 }
@@ -372,33 +359,28 @@ top: 10px;
     cursor: pointer;
 }
 
-.section-01 .button-register,
-.section-01 .button-register:hover {
+.section-01 .button,
+.section-01 .button:hover {
     display: inline-block;
     overflow: hidden;
-    min-width: 300px;
+    min-width: 200px;
     height: auto;
     background: #00447C;
     border-radius: 4px;
     color: #fff;
     font-size: 22px;
     line-height: 1;
-    padding: 17px 10px 12px 10px;
+    padding: 10px;
     text-align: center;
-    text-transform: uppercase;
     text-decoration: none;
     outline: none;
     cursor: pointer;
 }
 
-/*.section-01 .button-register:hover {
-  background: url("../images/button-register-over.png") no-repeat 50% 50%;
-  background-size: 293px auto; }*/
-
 .section-01 .counter-block {
     max-width: 293px;
     text-align: center;
-    margin: 20px 0px 0;
+    margin: 15px auto 0 auto;
     color: #00447C;
     font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
     font-size: 16px;
@@ -426,7 +408,7 @@ top: 10px;
 
 .section-01 .counter-block .counter .time {
   display: inline-block;
-  margin-left: 0px;
+  margin-left: 0;
   margin-right: 15px;
   text-align: center; }
 
@@ -457,11 +439,71 @@ top: 10px;
 .section-01 .counter-block .counter .digits span {
   background: -webkit-linear-gradient(#828282, #000, #828282);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; }
+  -webkit-text-fill-color: transparent;
+}
 
 .section-01 .counter-block .counter .text-mark {
   display: block;
-  clear: both; }
+  clear: both;
+}
+
+.section-01 img.gifts {
+    width: 100%;
+}
+
+.section-01 .terms {
+    width: 900px;
+    display: table;
+    margin: auto;
+}
+
+.section-01 .term {
+    width: 33%;
+    display: table;
+    float: left;
+    font-family: 'centrale_sans_xbold', Arial, Verdana, sans-serif;
+}
+
+.section-01 .term > div {
+    display: table-cell;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.section-01 .term > div:first-child {
+    width: 85px;
+}
+
+.section-01 .term > div:last-child {
+    padding-right: 20px;
+}
+
+.section-01 .term .num {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 50px;
+    color: white;
+    border-radius: 50%;
+    background-color: #ee1c29;
+}
+
+.section-01 .term .text {
+    text-align: left;
+    font-size: 20px;
+    color: black;
+    line-height: 1.2em;
+}
+
+.section-01 .term .text.final {
+    color: #ee1c29;
+    font-size: 30px;
+    line-height: 1em;
+    font-weight: bolder;
+}
 
 .section-02 {
     max-width: 100%;
@@ -566,20 +608,6 @@ a.rules-more-link:visited {
     margin: 0 0 20px 0 !important;
 }
 
-.section-04 {
-    width: 100%;
-    min-height: 603px;
-    background: url(../images/BG-04.jpg) no-repeat 50% 50%;
-    padding-top: 157px;
-}
-
-.section-04 .section-text {
-    color: #cf9350;
-    font-size: 18px;
-    line-height: 1.4;
-    max-width: 400px;
-}
-
 .prod-image {
     display: block;
     margin: 0 auto;
@@ -608,10 +636,7 @@ a.rules-more-link:visited {
 
 .footer {
     min-height: 70px;
-    padding-top: 18px;
-    padding-bottom: 18px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 18px 20px;
 }
 
 .footer .small-text {
@@ -668,7 +693,7 @@ a.rules-more-link:visited {
     display: none;
 }
 
-#pop-up-wheretobuy .max-width {
+#pop-up-wheretobuy .container {
     background: rgba(0, 0, 0, 99);
     border: 4px solid #ac8735;
     padding: 20px;
@@ -732,41 +757,17 @@ a.rules-more-link:visited {
     border: none;
 }
 
-.hero-block {
-    display: table;
-    padding-top: 20px;
-}
-
-.hero-block > div {
-    display: table-cell;
-    vertical-align: bottom;
-}
-
-.hero-block > div > img {
-    width: 100%;
-}
-
-.hero-block > div:first-child > img {
-    width: 100%;
-}
-
-/*.hero-block > div:last-child {*/
-    /*padding: 40px;*/
-    /*background: url("/images/bg_white.png");*/
-/*}*/
-
 #labels {
-    width: 100%;
+    width: 500px;
     display: table;
-    margin-bottom: 20px;
+    margin: 30px auto 20px auto;
 }
 
-.label-promo {
+#labels > .label-promo {
     width: 245px;
     display: table;
     padding: 8px;
     float: left;
-    background-color: white;
 }
 
 .label-promo:first-child {
@@ -775,7 +776,7 @@ a.rules-more-link:visited {
 
 .label-promo > .icon {
     color: #00447C;
-    font-size: 36px;
+    font-size: 40px;
     float: left;
     margin: 5px 10px 0 7px;
 }
@@ -792,139 +793,42 @@ a.rules-more-link:visited {
 .label-promo > .text-block > .label-head {
     color: red;
     font-size: 20px;
+    line-height: 1.2em;
     font-weight: bold;
 }
 
-@media (max-width: 1050px) {
-    .hero-block > .pair {
-        display: none;
+@media (max-width: 1200px) {
+    .section-01 .term {
     }
+}
 
-    .hero-block > div:last-child {
+@media (max-width: 1024px) {
+    .section-01 .terms {
         width: 100%;
-        margin-top: 0;
-    }
-
-    #labels {
-        width: auto;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-    }
-
-    .section {
-        background-size: cover; }
-
-    .section-04 {
-        background-position: right; }
-
-    .hero-block,
-    .section-04 .section-text,
-    .section-01 .counter-block,
-    .section-01 .button-video {
-        display: block;
-        text-align: center;
-        margin: 0 auto;
-    }
-
-    .section-01 .button-video {
-        margin-top: 91px;
-        margin-bottom: -71px; }
-
-    .logo-philips {
-        width: 109px;
-        height: auto;
-        margin-left: 20px;
-        margin-bottom: 0 !important;
-    }
-
-    .logo-shell-clubsmart {
-        width: 211px;
-        height: auto;
-    }
-
-    .section-01 .nav {
-        display: block;
-        float: none;
-        clear: both;
-        text-align: center;
-        margin-top: 10px;
-        font-size: 15px;
-        line-height: 1.3;
-    }
-
-    .nav .spacer {
-        display: none;
-    }
-
-    .hero-block {
-        padding-top: 60px;
-    }
-
-    .group-gifts-img {
-        max-width: 100%;
     }
 }
 
 @media (max-width: 768px) {
-    .logos {
-        text-align: center;
-        padding: 0;
-    }
-
-    .logo-philips, .logo-shell-clubsmart {
-        float: none;
-        display: inline-block;
-    }
-
-    .nav a[target=_blank] {
-        color: white;
-    }
-
-    .nav a.nav-k:link, .nav a.nav-k:visited {
-        background-color: #565655;
-    }
-
-    .nav a {
-        width: 50%;
-        margin: 0 auto 10px auto;
-        display: block;
-    }
-
-    .section-title  {
-        font-size: 34px;
-        line-height: 40px;
-        margin-top: 20px !important;
+    .section-01 img.gifts {
+        display: none;
     }
 }
 
-@media screen and (max-width: 550px) {
-    .slick-prev, .slick-next {
-        top: 20%
-    }
-
-    .section-02 {
-        padding-top: 20px;
-    }
-
-    .max-width h1.section-title {
-        font-size: 35px;
-    }
-
-    #labels .label-promo {
+@media (max-width: 740px) {
+    .section-01 .term {
+        width: 290px;
+        margin: 15px auto;
         float: none;
-        margin-bottom: 5px;
     }
 }
 
-@media screen and (max-width: 400px) {
-    .logo-philips, .logo-shell-clubsmart {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+@media (max-width: 520px) {
+    #labels {
+        width: 100%;
     }
 
-    .logo-philips {
-        margin-bottom: 10px;
+    #labels > .label-promo {
+        float: none;
+        margin: 5px auto;
     }
 }

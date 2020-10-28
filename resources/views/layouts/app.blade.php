@@ -27,7 +27,7 @@
 @endif
 
 <!--  -->
-<header class="header">
+<section-02eader class="header">
     <div class="max-width">
         <div class="row">
             <div class="col-md-6 col-sm-6 logos">
@@ -44,7 +44,7 @@
                 </nav>
             </div>
         </div>
-    </header>
+    </section-02eader>
 @yield('content')
 
 <section class="section section-05 footer">

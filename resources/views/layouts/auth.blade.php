@@ -72,70 +72,67 @@
 
 <section class="section section-01">
      <header class="header">
-        <div class="max-width">
+        <div class="container">
             <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12 logos">
-                    <img src="/images/logo-philips.png" class="logo-philips" alt="Philips">
-                    <img src="/images/shell-clubsmart.png" class="logo-shell-clubsmart" alt="Shell Clubsmart">
+                <div class="col-md-7 col-sm-7 col-xs-7 logos">
+                    <img src="/images/logo.png" class="logo-philips" alt="Philips">
+                    <img src="/images/b-shell-big.png" class="logo-shell-clubsmart" alt="Shell Clubsmart">
                 </div>
-                <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="col-md-5 col-sm-5 col-xs-5">
                     <nav class="nav">
                        <!--  <a href="#">Описание</a> -->
                         <a href="ShellPhilipsRules.pdf" target="_blank">Условия акции</a>
-                        <span class="spacer"></span>
-                        <a href="{{ url('/home') }}" class="nav-k">Вход</a>
-                        <a href="{{ url('/register') }}" class="nav-k">Регистрация</a>
                     </nav>
                 </div>
             </div>
         </div>
     </header>
-    <div class="max-width">
-        <div class="row hero-block">
-            <div class="col-md-6 pair">
-                <img src="/images/twix.png">
-            </div>
-            <div class="col-md-6 col-sm-12 col-xs-12">
-                <h1 class="section-title">Заправьтесь подарками!<br>Выгода до 50% на технику Philips!</h1>
-                {{--<div class="title-disclamer">Бесплатная доставка!<sup>*</sup></div>--}}
-                <div class="promo-text">Для активации скидки зарегистрируйте код с купона и закажите понравившиеся вам товары.</div>
+    <div class="container text-center">
+        <h1 class="section-title">Заправьтесь подарками!<br>Выгода до 50% на технику Philips!</h1>
+        <div class="promo-text">Для активации скидки зарегистрируйте код с купона и закажите понравившиеся вам товары.</div>
+        <a href="{{ url('/login') }}" class="button">Введите код</a>
+        <a href="{{ url('/register') }}" class="button">Регистрация</a>
 
-                <div id="labels">
-                    @include('layouts._label_block',['icon' => 'icon-shield-check', 'head' => '2 года*', 'text' => 'Официальная гарантия'])
-                    @include('layouts._label_block',['icon' => 'icon-truck', 'head' => 'БЕСПЛАТНАЯ**', 'text' => 'Доставка по России'])
-                </div>
-
-                <a href="{{ url('/login') }}" class="button-register">ВВЕДИТЕ КОД</a>
-                <div class="counter-block" it="timer">
-                    <span>До конца акции осталось:</span>
-                    <?php $time = Request::path() != 'end' ? strtotime(Config::get('app.end_time'))-time()-(3*60*60) : 0; ?>
-                    <div class="counter" it="timer" id="timer">
-	  					<span class="time days">
-	  						<span class="digits"><span>{{ $time ? floor($time/(60*60*24)) : '00' }}</span></span>
-	  						<span class="text-mark">дней</span>
-	  					</span>
-	  					<span class="time hours">
-                            <span class="digits"><span>{{ $time ? floor(($time/(60*60))%24) : '00' }}</span></span>
-	  						<span class="text-mark">часов</span>
-	  					</span>
-	  					<span class="time minutes">
-                            <span class="digits"><span>{{ $time ? floor($time/60%60) : '00' }}</span></span>
-	  						<span class="text-mark">минут</span>
-	  					</span>
-	  					<span class="time seconds">
-                            <span class="digits"><span>{{ $time ? floor($time%60) : '00' }}</span></span>
-	  						<span class="text-mark">секунд</span>
-	  					</span>
-                    </div>
-                </div>
+        <div class="counter-block">
+            <span>До конца акции осталось:</span>
+            <?php $time = Request::path() != 'end' ? strtotime(Config::get('app.end_time'))-time()-(3*60*60) : 0; ?>
+            <div class="counter" it="timer" id="timer">
+                <span class="time days">
+                    <span class="digits"><span>{{ $time ? floor($time/(60*60*24)) : '00' }}</span></span>
+                    <span class="text-mark">дней</span>
+                </span>
+                <span class="time hours">
+                    <span class="digits"><span>{{ $time ? floor(($time/(60*60))%24) : '00' }}</span></span>
+                    <span class="text-mark">часов</span>
+                </span>
+                <span class="time minutes">
+                    <span class="digits"><span>{{ $time ? floor($time/60%60) : '00' }}</span></span>
+                    <span class="text-mark">минут</span>
+                </span>
+                <span class="time seconds">
+                    <span class="digits"><span>{{ $time ? floor($time%60) : '00' }}</span></span>
+                    <span class="text-mark">секунд</span>
+                </span>
             </div>
+        </div>
+
+        <img class="gifts" src="/images/gifts.jpg" />
+        <div class="terms">
+            @include('_term_block', ['num' => 1, 'text' => '<b>Заправься</b><br>от 10 литров<br>Shell V-Power'])
+            @include('_term_block', ['num' => 2, 'text' => '<b>Купи</b><br>любой кофе<br>deli by Shell'])
+            @include('_term_block', ['num' => 3, 'text' => 'И ты <nobr>в игре!</nobr>', 'addClass' => 'final'])
+        </div>
+
+        <div id="labels">
+            @include('layouts._label_block',['icon' => 'icon-shield-check', 'head' => '2 года*', 'text' => 'Официальная гарантия'])
+            @include('layouts._label_block',['icon' => 'icon-truck', 'head' => 'БЕСПЛАТНАЯ**', 'text' => 'Доставка по России'])
         </div>
     </div>
 </section>
 
 <a name="gifts"></a>
 <section class="section section-03">
-    <div class="max-width">
+    <div class="container">
         <h1 class="section-title">Закажите эти и другие товары со скидкой<br>в интернет-магазине <span class="brand">Philips</span></h1>
         <!-- Slider -->
         <div class="regular slider" style="margin-top: 30px;">
@@ -167,25 +164,28 @@
 </section>
 
 <section class="section section-02">
-    <div class="max-width">
-        <h1 class="section-title">Получите <b>купон(ы)</b> на скидку <b>10%</b> любым из четырех способов:</h1>
+    <div class="container">
+        <h1 class="section-title">Получите купоны на скидку 10% <nobr>на АЗС «Шелл»!</nobr></h1>
         <div class="row section-rules">
             <ol class="rules">
-                <li>Заправьтесь на 30 литров и более топливом АИ-92, АИ-95, Дизель.</li>
-                <li>Приобретите товары в магазине на АЗС «Шелл» на сумму более 300 рублей.</li>
-                <li>Спишите накопленные 200 баллов с карты лояльности Shell ClubSmart.</li>
-                <li>Получите сразу 2 купона за заправку топливом Shell V-Power, Shell V-Power Racing, Shell V-Power Diesel на 30 литров и более.</li>
+                <li>Оплатите в одном чеке топливо АИ-95, АИ-98 или дизель от 10 литров и любой кофейный напиток.</li>
+                <li>Получите скретч-карту со скидкой 10% на технику Philips.</li>
+                <li>Регистрируйте купоны на сайте <a href="www.philips-shell-promo.ru" target="_blank">www.philips-shell-promo.ru</a>.</li>
+                <li>Накапливайте скидку — с вашим уникальным кодом выгода от покупки составит до 50%!.</li>
             </ol>
-            <p><sup>Купоны суммируются. Размер максимальной скидки — от 40% до 60%, в зависимости от категории товара.</sup></p>
-            <p><sup>Предложение действительно только для участников Shell ClubSmart. Нет карты? Не расстраивайтесь. Вы можете получить вашу карту Shell ClubSmart  абсолютно бесплатно на любой АЗС «Шелл» уже сегодня.</sup></p>
-            <p><sup>Период выдачи купонов на АЗС «Шелл» с 29 октября 2018 года до 03 февраля 2019 года или до тех пор, пока купоны имеются в наличии. Использование промо кодов на странице акции на сайте <a href="www.philips-shell-promo.ru">www.philips-shell-promo.ru</a> возможно с 29 октября 2018 года до 23 февраля 2019 года.</sup></p>
+            <p><sup>Купоны суммируются. Размер скидки — 40% или 50%, в зависимости от категории товара.</sup></p>
+            <p><sup>Предложение действительно только для участников Shell ClubSmart. Карту Shell ClubSmart можете получить абсолютно бесплатно на любой АЗС «Шелл» уже сегодня.</sup></p>
+            <p><sup>
+
+
+                    Период выдачи купонов на АЗС «Шелл» с 09 ноября 2020 года до 28 февраля 2021 года или до тех пор, пока купоны имеются в наличии. Использование промо кодов на странице акции на сайте <a href="www.philips-shell-promo.ru" target="_blank">www.philips-shell-promo.ru</a> возможно с 09 ноября 2020 года до 31 марта 2021 года.</sup></p>
         </div>
     </div>
 </section>
 
 <section class="section section-05 footer">
-    <div class="max-width">
-        <p class="small-text">Не является публичной офертой. За 1 визит на АЗС клиент может получить не более 1 купона за покупку товара в магазине и не более 1 купона за покупку топлива АИ-92, АИ-95, Дизель или не более 2 купонов за покупку топлива Shell V-Power, Shell V-Power Racing, Shell V-Power Diesel. Максимальное количество купонов за 1 визит на АЗС — 6 штук. Покупка табачных изделий не учитывается в сумме покупки, необходимой для получения купона. Список товаров Philips, участвующих в акции, на которые возможно получить скидку, представлен на сайте <a href="www.philips-shell-promo.ru" target="_blank">www.philips-shell-promo.ru</a>. Размер максимальной скидки на различные товары Philips отличается. С подробной информацией об организаторе и операторах акции, о правилах, порядке, сроках и условиях ее проведения можно ознакомиться на сайте shell.com.ru. Shell V-Power Рейсинг, Shell V-Power Дизель.</p>
+    <div class="container">
+        <p class="small-text">Не является публичной офертой. За 1 визит на АЗС клиент может получить не более 1 купона за покупку товара в магазине и не более 1 купона за покупку топлива АИ-92, АИ-95, Дизель или не более 2 купонов за покупку топлива Shell V-Power, Shell V-Power Racing, Shell V-Power Diesel. Максимальное количество купонов за 1 визит на АЗС — 6 штук. Покупка табачных изделий не учитывается в сумме покупки, необходимой для получения купона. Список товаров Philips, участвующих в акции, на которые возможно получить скидку, представлен на сайте <a href="www.philips-shell-promo.ru" target="_blank"><nobr>www.philips-shell-promo.ru</nobr></a>. Размер максимальной скидки на различные товары Philips отличается. С подробной информацией об организаторе и операторах акции, о правилах, порядке, сроках и условиях ее проведения можно ознакомиться на сайте shell.com.ru. Shell V-Power Рейсинг, Shell V-Power Дизель.</p>
         <p class="small-text">* По вопросам гарантийного обслуживания можно проконсультироваться при заказе товара.</p>
         <p class="small-text">** Подробнее в правилах акции.</p>
     </div>

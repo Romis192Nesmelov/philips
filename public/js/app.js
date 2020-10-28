@@ -33,26 +33,6 @@ function startTimer(actionEndTime) {
     }, 1000);
 }
 
-// ---- Video ---- //
-function showPopUpVideo() {
-    $('#pop-up-video').show();
-}
-
-function closePopUpVideo() {
-    $('#pop-up-video').hide();
-}
-// ---- // Video ---- //
-
-
-// ---- Где купить pop-up ---- //
-function showWhereToBuy() {
-    $('#pop-up-wheretobuy').show();
-}
-
-function closeWhereToBuy() {
-    $('#pop-up-wheretobuy').hide();
-}
-
 $(function() {
     $('input[type=radio]').each(function () {
         var _self = $(this);

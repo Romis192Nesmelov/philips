@@ -5,8 +5,8 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/bootstrap-toggle.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link rel="stylesheet" type="text/css" href="/css/app-style.css">
 
@@ -26,29 +26,29 @@
     {!! $settingsForm !!}
 @endif
 
-<!--  -->
-<section-02eader class="header">
-    <div class="max-width">
-        <div class="row">
-            <div class="col-md-6 col-sm-6 logos">
-                <img src="/images/logo-philips.png" class="logo-philips" alt="Philips">
-                <img src="/images/shell-clubsmart.png" class="logo-shell-clubsmart" alt="Shell Clubsmart">
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-                 <nav class="nav">
-                    <span class="spacer"></span>
-                    <a href="ShellPhilipsRules.pdf" target="_blank">Условия акции</a>
-                    <span class="spacer"></span>
-                    <a href="{{ url('/user') }}">Настройки</a>
-                    <a href="{{ url('/logout') }}" class="nav-k">Выйти</a>
-                </nav>
+<section class="section section-02">
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                @include('layouts._logos_block')
+                <div class="col-md-5 col-sm-5 col-xs-5">
+                     <nav class="nav">
+                        <span class="spacer"></span>
+                        <a href="ShellPhilipsRules.pdf" target="_blank">Условия акции</a>
+                        <span class="spacer"></span>
+                        <a href="{{ url('/user') }}">Настройки</a>
+                        <a href="{{ url('/logout') }}" class="nav-k">Выйти</a>
+                    </nav>
+                </div>
             </div>
         </div>
-    </section-02eader>
+    </header>
+</section>
+
 @yield('content')
 
 <section class="section section-05 footer">
-    <div class="max-width">
+    <div class="container">
         <p class="small-text">Не является публичной офертой. За 1 визит на АЗС клиент может получить не более 1 купона за покупку товара в магазине и не более 1 купона за покупку топлива АИ-92, АИ-95, Дизель или не более 2 купонов за покупку топлива Shell V-Power, Shell V-Power Racing, Shell V-Power Diesel. Максимальное количество купонов за 1 визит на АЗС — 6 штук. Покупка табачных изделий не учитывается в сумме покупки, необходимой для получения купона. Список товаров Philips, участвующих в акции, на которые возможно получить скидку, представлен на сайте <a href="www.philips-shell-promo.ru" target="_blank">www.philips-shell-promo.ru</a>. Размер максимальной скидки на различные товары Philips отличается. С подробной информацией об организаторе и операторах акции, о правилах, порядке, сроках и условиях ее проведения можно ознакомиться на сайте shell.com.ru. Shell V-Power Рейсинг, Shell V-Power Дизель.</p>
     </div>
 </section>

@@ -9,7 +9,7 @@
 @endfor
 
 <section class="section section-01">
-    <div class="max-width">
+    <div class="container">
         <h1 class="section-title do-1 coffee-count">1. Введите промокод</h1>
         <p></p>
         <form class="form-horizontal" role="form" method="POST" action="{{ url('/codes') }}">
@@ -81,7 +81,7 @@
 @if (count($promoCodesNotActive) <= Config::get('app.max_discount_codes'))
     <a name="discount"></a>
     <section class="section section-02">
-        <div class="max-width">
+        <div class="container">
             <h1 class="section-title do-2 coffee-count">2. Получите скидку</h1>
             <p>В зависимости от количества введенных вами промокодов, вам станут доступны соответствующие скидки. Для получения скидки нажмите кнопку с выбранной скидкой. Затем, после появления запроса, подтвердите получение скидки.</p>
             <div class="row">
@@ -129,9 +129,8 @@
 
     <a name="shop"></a>
     <section class="section section-03">
-        <div class="max-width">
+        <div class="container">
             <h1 class="section-title do-1 coffee-count">3. Выберите скидку и сделайте покупку</h1>
-            <p></p>
             <p id="count_discount">
                 @if (!isset($avlDis) || !count($avlDis))
                     {{ trans('messages.no_have_discounts') }}

@@ -251,13 +251,7 @@ top: 10px;
 #app-layout .header {
     padding-top: 30px;
     padding-bottom: 20px;
-
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,ffffff+100&0.65+0,0+100 */
-    background: -moz-linear-gradient(top, rgba(0,0,0,0.65) 0%, rgba(255,255,255,0) 100%), url("../images/BG-01.jpg") no-repeat 0% 0%; /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(255,255,255,0) 100%), url("../images/BG-01.jpg") no-repeat 0% 0%; /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(255,255,255,0) 100%), url("../images/BG-01.jpg") no-repeat 0% 0%; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
-    background-size: cover;
+    background: #FFD300;
 }
 
 .logo-philips {
@@ -293,13 +287,12 @@ top: 10px;
 
 .nav a:link,
 .nav a:visited {
-    color: #fff;
+    color: black;
     text-decoration: none;
 }
 
 .nav a:hover {
-    color: #fff;
-    text-decoration: none;
+    opacity: 0.5;
 }
 
 .nav a {
@@ -343,24 +336,7 @@ top: 10px;
     text-decoration: underline;
 }
 
-.section-01 .button-video {
-    display: block;
-    clear: both;
-    width: 204px;
-    height: 65px;
-    background: url("../images/play_BTN.png") no-repeat left top;
-    background-size: 64px 65px;
-    padding-left: 78px;
-    color: #fff;
-    font-size: 22px;
-    line-height: 1;
-    padding-top: 12px;
-    margin: 32px auto;
-    cursor: pointer;
-}
-
-.section-01 .button,
-.section-01 .button:hover {
+.section-01 .button {
     display: inline-block;
     overflow: hidden;
     min-width: 200px;
@@ -375,6 +351,7 @@ top: 10px;
     text-decoration: none;
     outline: none;
     cursor: pointer;
+    margin-bottom: 10px;
 }
 
 .section-01 .counter-block {
@@ -679,26 +656,13 @@ a.rules-more-link:visited {
 }
 
 .nav-k {
-    border: 1px solid #fff;
+    border: 1px solid black;
     padding: 10px 16px;
     border-radius: 5px;
 }
 
 .nav-k:hover {
-    border: 1px solid rgba(255, 255, 255, 0.75);
-}
-
-#pop-up-wheretobuy {
-    color: #fff;
-    display: none;
-}
-
-#pop-up-wheretobuy .container {
-    background: rgba(0, 0, 0, 99);
-    border: 4px solid #ac8735;
-    padding: 20px;
-    margin-top: 20px;
-    padding-bottom: 50px !important;
+    opacity: 0.5;
 }
 
 .info-message {
@@ -811,6 +775,10 @@ a.rules-more-link:visited {
 @media (max-width: 768px) {
     .section-01 img.gifts {
         display: none;
+    }
+
+    .slick-arrow {
+        top: 150px;
     }
 }
 

@@ -13,13 +13,6 @@ img {
     margin: 0 0 0 10px !important;
 }
 
-.max-width {
-    max-width: 1040px;
-    margin: 0 auto;
-    position: relative;
-    padding: 0 20px;
-}
-
 /*#pop-up {*/
   /*display: none; }*/
 
@@ -81,9 +74,8 @@ img {
 
 .pop-up-form .form .btn,
 .pop-up-form .form input {
-  padding: 8px 8px; }
-
-
+  padding: 8px 8px;
+}
 
 .pop-up-form .form .checkbox label {
   display: inline-block;
@@ -109,25 +101,28 @@ img {
 .pop-up-form .form a:hover,
 .pop-up-form .form a:visited {
   color: #fff;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 .form-text-left {
-  text-align: left; }
+  text-align: left;
+}
 
 .section {
   display: block;
   clear: both;
   overflow: hidden;
   padding-top: 50px;
-  padding-bottom: 0px;
+  padding-bottom: 0;
   max-width: 100%;
   height: auto;
-  background: #fff; }
+  background: #fff;
+}
 
 
-
-
-
+.section.section-02 {
+    padding-top: 0;
+}
 
 .products-group {
   display: block;
@@ -135,7 +130,8 @@ img {
   border-radius: 5px;
   overflow: hidden;
   padding: 20px;
-  box-shadow: inset 0px 0px 9.2 rgba(153, 153, 153, 0.43); }
+  box-shadow: rgba(153, 153, 153, 0.43);
+}
 
 
 /*col-md-2 */
@@ -263,13 +259,13 @@ button[type="submit"]:hover {
 #avaliableDiscounts {
   display: block;
   margin: 20px 0;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 .discountDescript {
     display: block;
   margin: 20px 0;
 }
-
 
 .discount-value {
     display: inline-block;

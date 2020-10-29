@@ -35,7 +35,7 @@
                         @include('layouts._logos_block')
                         <td>
                              <nav class="nav">
-                                <a href="ShellPhilipsRules.pdf" target="_blank">Условия акции</a>
+                                <a href="rules.pdf" target="_blank">Условия акции</a>
                                 <a href="{{ url('/user') }}">Настройки</a>
                                 <a href="{{ url('/logout') }}" class="nav-k">Выйти</a>
                             </nav>

@@ -80,7 +80,7 @@
                         <td>
                             <nav class="nav">
                                 <!--  <a href="#">Описание</a> -->
-                                <a href="ShellPhilipsRules.pdf" target="_blank">Условия акции</a>
+                                <a href="rules.pdf" target="_blank">Условия акции</a>
                             </nav>
                         </td>
                     </tr>

@@ -40,7 +40,7 @@
         <div class="form-group form-text-left">
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" name="agree_rules"> <sup style="color: Red;">*</sup> Я ознакомился и согласен<br> с <!-- <a href="{{ url('/rules') }}">условиями акции</a> --> <a href="ShellPhilipsRules.pdf">условиями акции</a>
+                    <input type="checkbox" name="agree_rules"> <sup style="color: Red;">*</sup> Я ознакомился и согласен<br> с <!-- <a href="{{ url('/rules') }}">условиями акции</a> --> <a href="rules.pdf">условиями акции</a>
 
                 </label>
             </div>

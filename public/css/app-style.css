@@ -29,7 +29,8 @@ img {
 .pop-up-form {
   display: block;
   max-width: 100%;
-  margin-top: 50px; }
+  margin-top: 50px;
+}
 
 .pop-up-form .container {
   display: block;
@@ -37,7 +38,8 @@ img {
   height: auto;
   margin: 0 auto;
   position: relative;
-  text-align: center; }
+  text-align: center;
+}
 
 .icon-close {
   cursor: pointer;
@@ -509,7 +511,7 @@ text-align: left;
     margin-right: 5px;
 }
 
-.form-group {
+.data-group .form-group {
     width: 470px;
     border: none;
     border-radius: 5px;

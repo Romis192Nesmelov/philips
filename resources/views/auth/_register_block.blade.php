@@ -36,10 +36,6 @@
         @endif
     </div>
 
-
-    
-
-
     @if (Auth::guard()->guest())
         <div class="form-group form-text-left">
             <div class="checkbox">

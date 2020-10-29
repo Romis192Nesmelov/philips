@@ -74,13 +74,17 @@
      <header class="header">
         <div class="container">
             <div class="row">
-                @include('layouts._logos_block')
-                <div class="col-md-5 col-sm-5 col-xs-5">
-                    <nav class="nav">
-                       <!--  <a href="#">Описание</a> -->
-                        <a href="ShellPhilipsRules.pdf" target="_blank">Условия акции</a>
-                    </nav>
-                </div>
+                <table>
+                    <tr>
+                        @include('layouts._logos_block')
+                        <td>
+                            <nav class="nav">
+                                <!--  <a href="#">Описание</a> -->
+                                <a href="ShellPhilipsRules.pdf" target="_blank">Условия акции</a>
+                            </nav>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
     </header>

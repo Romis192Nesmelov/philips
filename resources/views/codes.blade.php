@@ -11,67 +11,33 @@
 <section class="section section-01">
     <div class="container">
         <h1 class="section-title do-1 coffee-count">1. Введите промокод</h1>
-        <p></p>
         <form class="form-horizontal" role="form" method="POST" action="{{ url('/codes') }}">
             {!! csrf_field() !!}
-            <div>
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <?php /* <div class="form-group products-group">
-                            @foreach ($coffee as $k => $coff)
-                                <div class="product-item">
-                                    <div class="checkbox product">
-                                        <label>
-                                            <div class="prod-img"><img src="{{ $coff->image }}"></div>
-                                            <input type="radio" name="coffee" value="{{ $coff->id }}" {{ count($errors->getMessageBag()) ? (old('coffee') && old('coffee') == $coff->name ? 'checked' : '') : ''}}>
-                                            <span>{{ $coff->name }}</span>
-                                        </label>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                        */ ?>
-                        <div class="row data-group">
-
-                            @if (Config::get('app.allow_register_new_codes'))
-                                <div>
-                                       <?php /* <div class="form-group">
-                                        <div><input type="text" placeholder="Город" class="form-control" name="town" value="{{ count($errors->getMessageBag()) ? old('town') : '' }}"></div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div><input type="text" placeholder="Название магазина" class="form-control" name="shop" value="{{ count($errors->getMessageBag()) ? old('shop') : '' }}"></div>
-                                    </div>   */ ?>
-                                    <div class="form-group {{ $errors->has('code') ? 'has-error' : '' }}">
-                                        <div><input type="text" placeholder="XXXX-XXXX" class="form-control" name="code" value="{{ old('code') }}"></div>
-                                         <button type="submit" class="btn btn-primary"><i class="fa fa-btn fa-sign-in"></i> Ввод</button>
-                                        @if ($errors->has('code'))
-                                            <div class="form-control-feedback"><i class="icon-cancel-circle2"></i></div>
-                                            <span class="help-block">{{ $errors->first('code') }}</span>
-                                        @endif
-                                    </div>
-
-                                </div>
-                            @endif
-                            <div>
-                                <div id="promo-codes-block">
-                                    @if (!count($promoCodesNotActive) && !count($promoCodesActive))
-                                        <div class="no-code">{{ trans('messages.no_have_promo') }}</div>
-                                    @else
-                                        <h2 class="block-title">Введенные промокоды</h2>
-                                    @endif
-
-                                    @foreach ($promoCodesActive as $code)
-                                        <div class="code inactive-code">{{ $code->code }}</div>
-                                    @endforeach
-
-                                    @foreach ($promoCodesNotActive as $code)
-                                        <div class="code active-code">{{ $code->code }}</div>
-                                    @endforeach
-
-                                </div>
-                            </div>
-                        </div>
+            <div class="data-group">
+                @if (Config::get('app.allow_register_new_codes'))
+                    <div class="form-group {{ $errors->has('code') ? 'has-error' : '' }}">
+                        <input type="text" placeholder="XXXX-XXXX" class="form-control" name="code" value="{{ old('code') }}">
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-btn fa-sign-in"></i> Ввод</button>
+                        @if ($errors->has('code'))
+                            <div class="form-control-feedback"><i class="icon-cancel-circle2"></i></div>
+                            <span class="help-block">{{ $errors->first('code') }}</span>
+                        @endif
                     </div>
+                @endif
+                <div id="promo-codes-block">
+                    @if (!count($promoCodesNotActive) && !count($promoCodesActive))
+                        <div class="no-code">{{ trans('messages.no_have_promo') }}</div>
+                    @else
+                        <h2 class="block-title">Введенные промокоды</h2>
+                    @endif
+
+                    @foreach ($promoCodesActive as $code)
+                        <div class="code inactive-code">{{ $code->code }}</div>
+                    @endforeach
+
+                    @foreach ($promoCodesNotActive as $code)
+                        <div class="code active-code">{{ $code->code }}</div>
+                    @endforeach
                 </div>
             </div>
         </form>

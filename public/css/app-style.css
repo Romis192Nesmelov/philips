@@ -227,10 +227,11 @@ button[type="submit"]:hover {
 }
 
 #promo-codes-block .code {
-  display: inline-block;
-  font-size: 20px;
-  color: #00447C;
-  font-weight: 900;
+    display: inline-block;
+    font-size: 20px;
+    color: #00447C;
+    font-weight: 900;
+    margin-right: 7px;
 }
 
 .no-code {

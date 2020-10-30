@@ -100,13 +100,6 @@ class CodeController extends BasicController
         $resRequest = $this->giveMeApiRequest($code);
         $res = $resRequest[0];
 
-// Раскомментировать и подставить вместо XXXXXXXXXXXXXXXX код скидки, который должен считаться использованным
-//        if (strtoupper($code) == 'XXXXXXXXXXXXXXXX') {
-//            $res->status = 'used';
-//            $res->date = '10.09.2016';
-//            $res->id = 123456789;
-//        }
-
         if ($res->status == 'ok') return true;
         elseif ($res->status == 'used') {
             DiscountCode::where('code',strtoupper($code))->update([

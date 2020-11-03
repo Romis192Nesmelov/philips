@@ -80,7 +80,7 @@
                         <td>
                             <nav class="nav">
                                 <!--  <a href="#">Описание</a> -->
-                                <a href="rules.pdf" target="_blank">Условия акции</a>
+                                <a href="rules.pdf" target="_blank">Правила акции</a>
                             </nav>
                         </td>
                     </tr>
@@ -90,9 +90,10 @@
     </header>
     <div class="container text-center">
         <h1 class="section-title">Заправьтесь подарками!<br>Выгода до 50% на технику Philips!</h1>
-        <div class="promo-text">Для активации скидки зарегистрируйте код с купона и закажите понравившиеся вам товары.</div>
+        <div class="promo-text">Накопите 4 или 5 купонов и получите скидку на акционные товары.</div>
+        <div class="promo-sub">1 купон = 10%</div>
         <a href="{{ url('/login') }}" class="button">Введите код</a>
-        <a href="{{ url('/register') }}" class="button">Регистрация</a>
+        {{--<a href="{{ url('/register') }}" class="button">Регистрация</a>--}}
 
         <div class="counter-block">
             <span>До конца акции осталось:</span>
@@ -166,20 +167,18 @@
 
 <section class="section section-02">
     <div class="container">
-        <h1 class="section-title">Получите купоны на скидку 10% <nobr>на АЗС «Шелл»!</nobr></h1>
+        <h1 class="section-title">Копите купоны и получите скидку <nobr>на технику Philips</nobr></h1>
         <div class="row section-rules">
             <ol class="rules">
-                <li>Оплатите в одном чеке топливо АИ-95, АИ-98 или дизель от 10 литров и любой кофейный напиток.</li>
-                <li>Получите скретч-карту со скидкой 10% на технику Philips.</li>
-                <li>Регистрируйте купоны на сайте <a href="www.philips-shell-promo.ru" target="_blank">www.philips-shell-promo.ru</a>.</li>
-                <li>Накапливайте скидку — с вашим уникальным кодом выгода от покупки составит до 50%!.</li>
+                <li>Купите в одном чеке топливо<sup>1</sup> и один кофейный напиток.</li>
+                <li>За каждый чек получите один купон со скидкой 10%..</li>
+                <li>Для участия в акции накопите 4 или 5 купонов, для достижения скидки 40% или 50%<sup>2</sup></li>
+                <li>Регистрируйтесь на <a href="www.philips-shell-promo.ru" target="_blank">www.philips-shell-promo.ru</a> и наслаждайтесь покупками.</li>
             </ol>
-            <p><sup>Купоны суммируются. Размер скидки — 40% или 50%, в зависимости от категории товара.</sup></p>
-            <p><sup>Предложение действительно только для участников Shell ClubSmart. Карту Shell ClubSmart можете получить абсолютно бесплатно на любой АЗС «Шелл» уже сегодня.</sup></p>
-            <p><sup>
-
-
-                    Период выдачи купонов на АЗС «Шелл» с 09 ноября 2020 года до 28 февраля 2021 года или до тех пор, пока купоны имеются в наличии. Использование промо кодов на странице акции на сайте <a href="www.philips-shell-promo.ru" target="_blank">www.philips-shell-promo.ru</a> возможно с 09 ноября 2020 года до 31 марта 2021 года.</sup></p>
+            <ol class="callout">
+                <li>Топливо АИ-95, АИ-98 или дизель от 10 литров.</li>
+                <li>Размер скидки — 40% или 50%, в зависимости от категории товара. Предложение действительно только для участников Shell ClubSmart. Карту Shell ClubSmart можете получить абсолютно бесплатно на любой АЗС «Шелл» уже сегодня. Период выдачи купонов на АЗС «Шелл» с 09 ноября 2020 года до 28 февраля 2021 года или до тех пор, пока купоны имеются в наличии. Использование промо кодов на странице акции на сайте www.philips-shell-promo.ru (https://www.philips-shell-promo.ru/www.philips-shell-promo.ru) возможно с 09 ноября 2020 года до 31 марта 2021 года.</li>
+            </ol>
         </div>
     </div>
 </section>

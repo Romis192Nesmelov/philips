@@ -56,6 +56,10 @@ img {
     background: #000;
 }
 
+.red {
+    color: red !important;
+}
+
 .row {
     margin: 0;
 }
@@ -332,7 +336,13 @@ img {
     color: #000000;
     text-align: center;
     position: relative;
-    margin: 0 0 20px 0;
+    margin: 0;
+}
+
+.section-01 .promo-sub {
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .section-01 .section-title a:link,
@@ -523,8 +533,13 @@ img {
     line-height: 1.1em;
 }
 
-p > sup {
-    font-size: 15px;
+ol.callout {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+li sup {
+    font-size: 12px;
 }
 
 .do-text {

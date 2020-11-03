@@ -47,7 +47,7 @@
 
     <div class="form-group">
         <a class="" href="{{ url('/password/reset') }}">Забыли пароль?</a><br>
-        <a class="" href="{{ url('/register') }}">Регистрация</a>
+        <a class="red" href="{{ url('/register') }}">Регистрация</a>
     </div>
 </form>
 

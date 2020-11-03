@@ -22,7 +22,7 @@ SMTP_PASSWORD = params["MAIL_PASSWORD"]
 TO = (
     'victor.makarov@freshmindcom.ru',
     'info@freshmindcom.ru',
-    # 'sergey.kasyanov@philips.com',
+    'sergey.kasyanov@philips.com',
 )
 
 

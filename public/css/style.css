@@ -340,9 +340,12 @@ img {
 }
 
 .section-01 .promo-sub {
-    font-size: 12px;
+    font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
     text-align: center;
     margin-bottom: 20px;
+    color: #00447C;
 }
 
 .section-01 .section-title a:link,
@@ -533,13 +536,22 @@ img {
     line-height: 1.1em;
 }
 
-ol.callout {
+table.callout {
     font-size: 12px;
     font-weight: normal;
 }
 
+table.callout td {
+    padding: 3px 0;
+    vertical-align: top;
+}
+
 li sup {
     font-size: 12px;
+}
+
+table.callout sup {
+    top: -0.7em;
 }
 
 .do-text {

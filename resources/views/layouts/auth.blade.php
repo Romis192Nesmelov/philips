@@ -120,7 +120,7 @@
 
         <img class="gifts" src="/images/gifts.jpg" />
         <div class="terms">
-            @include('_term_block', ['num' => 1, 'text' => '<b>Заправься</b><br>от 10 литров<br>Shell V-Power'])
+            @include('_term_block', ['num' => 1, 'text' => '<b>Заправься</b><br>топливом Shell<br>от 10 литров<sup>1</sup>'])
             @include('_term_block', ['num' => 2, 'text' => '<b>Купи</b><br>любой кофе<br>deli by Shell'])
             @include('_term_block', ['num' => 3, 'text' => 'И ты <nobr>в игре!</nobr>', 'addClass' => 'final'])
         </div>

@@ -34,6 +34,8 @@ function startTimer(actionEndTime) {
 }
 
 $(function() {
+    $('input[name=code]').mask("9999-9999");
+
     $('input[type=radio]').each(function () {
         var _self = $(this);
         _self.click(function () {

@@ -92,6 +92,7 @@
         <h1 class="section-title">Заправьтесь подарками!<br>Выгода до 50% на технику Philips!</h1>
         <div class="promo-text">Накопите 4 или 5 купонов и получите скидку на акционные товары.</div>
         <div class="promo-sub">1 купон = 10%</div>
+        <div class="promo-sub">Для участия в акции, пожалуйста, зарегистрируйтесь, используя кнопку ниже:</div>
         <a href="{{ url('/login') }}" class="button">Введите код</a>
         {{--<a href="{{ url('/register') }}" class="button">Регистрация</a>--}}
 
@@ -167,7 +168,7 @@
 
 <section class="section section-02">
     <div class="container">
-        <h1 class="section-title">Копите купоны и получите скидку <nobr>на технику Philips</nobr></h1>
+        <h1 class="section-title">Копите купоны и получите скидку <nobr>на технику</nobr> Philips</h1>
         <div class="row section-rules">
             <ol class="rules">
                 <li>Купите в одном чеке топливо<sup>1</sup> и один кофейный напиток.</li>

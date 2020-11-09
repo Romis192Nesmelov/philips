@@ -155,7 +155,7 @@
 
             ];
             ?>
-            @foreach(array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10) as $i)
+            @for($i=1;$i<=10;$i++)
                 @include('layouts._slider_block',[
                     'image' => $i.'_2304-PH-PhilipsShell_promo20_img.jpg',
                     'title' => $items[$i-1]['title'],

@@ -34,7 +34,8 @@ function startTimer(actionEndTime) {
 }
 
 $(function() {
-    $('input[name=code]').mask("****-****");
+    $.mask.definitions['p'] = "[A-KM-Za-km-z3479]";
+    $('input[name=code]').mask("pppp-pppp");
 
     $('input[type=radio]').each(function () {
         var _self = $(this);

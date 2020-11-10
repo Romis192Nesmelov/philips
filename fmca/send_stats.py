@@ -23,6 +23,7 @@ TO = (
     'victor.makarov@freshmindcom.ru',
     'info@freshmindcom.ru',
     'sergey.kasyanov@philips.com',
+    'pr@freshmindcom.ru',
 )
 
 

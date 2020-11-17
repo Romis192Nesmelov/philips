@@ -36,6 +36,16 @@ function startTimer(actionEndTime) {
 $(function() {
     $('input[name=code]').mask("****-****");
 
+    $(window).scroll(function() {
+        var button = $('#up-arrow');
+        if ($(this).scrollTop() > $(this).outerHeight()) button.fadeIn();
+        else button.fadeOut();
+    });
+
+    $('#up-arrow').click(function() {
+        $(window).scrollTop(0);
+    });
+
     $('input[type=radio]').each(function () {
         var _self = $(this);
         _self.click(function () {

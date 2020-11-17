@@ -353,6 +353,8 @@ text-align: left;
 }
 
 .section-03 iframe {
+    height: 1000px;
+    padding: 0;
     text-align: center;
     display: inline-block;
     margin-left: -7px;
@@ -560,6 +562,41 @@ span.help-block {
     border: 1px solid #ccc;
 }
 
+#up-arrow {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    cursor: pointer;
+    z-index: 999;
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    .section-03 iframe {
+        height: 1250px;
+    }
+}
+
+@media (max-width: 990px) {
+    .section-03 iframe {
+        height: 1550px;
+    }
+}
+
+@media (max-width: 600px) {
+    .section-03 iframe {
+        height: 2140px;
+    }
+}
+
+@media (max-width: 425px) {
+    .section-03 iframe {
+        height: 3950px;
+    }
+}
+
 @media (max-width: 768px) {
     .data-group > div {
         display: block;
@@ -591,6 +628,18 @@ span.help-block {
 
     .data-group input {
         width: calc(100% - 120px);
+    }
+}
+
+@media (max-width: 490px) {
+    input[type="text"] {
+        float: none;
+        margin-bottom: 10px;
+    }
+
+    button[type="submit"] {
+        display: block;
+        margin-left: 0;
     }
 }
 

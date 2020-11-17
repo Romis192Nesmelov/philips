@@ -133,23 +133,14 @@
             </p>
 
             <div id="iframeContainer">
-                <iframe src="{{ Config::get('app.api_host').'show/name/shell?apc='.Request::input('dis_code') }}" width="100%" height="1000" frameborder="no" align="center"></iframe>
+                <iframe src="{{ Config::get('app.api_host').'show/name/shell?apc='.Request::input('dis_code') }}" width="100%" frameborder="no" align="center"></iframe>
             </div>
         </div>
     </section>
 @endif
 
-<script>
-    window.api_host = "{{ Config::get('app.api_host') }}"+'show/name/shell?apc=';
+<img id="up-arrow" src="/images/arrow.svg" />
 
-    window.no_have_discounts = "{{ trans('messages.no_have_discounts') }}";
-    window.one_discount = "{{ trans('messages.one_discount') }}";
-    window.many_discounts = "{{ trans('messages.many_discounts') }}";
-
-    window.not_selected_discount = "{{ trans('messages.not_selected_discount') }}";
-
-    window.no_have_promo = "{{ trans('messages.no_have_promo') }}";
-</script>
 @if (Request::has('dis_code') && !$errors->has('message'))
     <script>startCheckingCode('{{ Request::input("dis_code") }}')</script>
 @endif

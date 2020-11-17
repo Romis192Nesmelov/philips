@@ -28,20 +28,11 @@ call date_between(FROM_UNIXTIME(@min_unixtime, '%Y-%m-%d'), NOW());
 
 DROP PROCEDURE `date_between`;
 
-CREATE TEMPORARY TABLE `users_not_finished` AS (
-	SELECT DATE(created_at) AS 'Date', COUNT(created_at) AS 'Registrations_not_finished'
+CREATE TEMPORARY TABLE `users_groups` AS (
+	SELECT DATE(created_at) AS 'Date', COUNT(created_at) AS 'Registrations'
 	FROM `philips`.users
-    WHERE active <> 1
 	GROUP BY Date
 	);
-
-CREATE TEMPORARY TABLE `users_finished` AS (
-	SELECT DATE(created_at) AS 'Date', COUNT(created_at) AS 'Registrations_finished'
-	FROM `philips`.users
-    WHERE active = 1
-	GROUP BY Date
-	);
-
 
 CREATE TEMPORARY TABLE `promocodes_groups` AS (
 	SELECT FROM_UNIXTIME(on_time, '%Y-%m-%d') AS 'Date', COUNT(on_time) AS 'Promocodes'
@@ -100,8 +91,7 @@ CREATE TEMPORARY TABLE `orders_groups` AS (
 	);
 
 SELECT dates.Date AS 'Date', 
-			 IFNULL(Registrations_not_finished,'') AS 'Registrations not finished',
-			 IFNULL(Registrations_finished,'') AS 'Registrations finished',
+			 IFNULL(Registrations,'') AS 'Registrations',
 			 IFNULL(Promocodes,'') AS 'Promocodes',
 -- 			 IFNULL(Discount10,'') AS 'Discount10',
 -- 			 IFNULL(Discount20,'') AS 'Discount20',
@@ -111,9 +101,8 @@ SELECT dates.Date AS 'Date',
 -- 			 IFNULL(Discount60,'') AS 'Discount60',
 			 IFNULL(Orders,'') AS 'Orders'
 FROM dates 
-LEFT OUTER JOIN users_not_finished ON dates.Date = users_not_finished.Date
-LEFT OUTER JOIN users_finished ON dates.Date = users_finished.Date
-LEFT OUTER JOIN promocodes_groups ON dates.Date = promocodes_groups.Date
+LEFT OUTER JOIN users_groups ON dates.Date = users_groups.Date 
+LEFT OUTER JOIN promocodes_groups ON dates.Date = promocodes_groups.Date 
 -- LEFT OUTER JOIN discount10_groups ON dates.Date = discount10_groups.Date
 -- LEFT OUTER JOIN discount20_groups ON dates.Date = discount20_groups.Date
 -- LEFT OUTER JOIN discount30_groups ON dates.Date = discount30_groups.Date

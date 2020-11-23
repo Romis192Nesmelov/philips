@@ -23,8 +23,8 @@ END//;
 delimiter ;
 
 SELECT MIN(on_time) INTO @min_unixtime FROM promo_codes WHERE on_time > 0;
-call date_between(FROM_UNIXTIME(@min_unixtime, '%Y-%m-%d'), NOW());
--- call date_between('2020-11-01', NOW());
+-- call date_between(FROM_UNIXTIME(@min_unixtime, '%Y-%m-%d'), NOW());
+call date_between('2020-11-09', NOW());
 
 DROP PROCEDURE `date_between`;
 

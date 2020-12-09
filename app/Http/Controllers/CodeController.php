@@ -52,12 +52,12 @@ class CodeController extends BasicController
             return redirect('/codes')->withErrors($this->errors);
         }
 
-        Session::flash('code',$codeNumber);
-
         $code->on_time = time();
         $code->user_id = Auth::user()->id;
         $code->save();
 
+        Session::flash('codes',count(Auth::user()->promoCodes));
+        
         return redirect('/codes');
     }
 

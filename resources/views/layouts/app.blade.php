@@ -63,8 +63,8 @@
     ga('create', 'UA-85034431-1', 'auto');
 </script>
 
-@if (Session::has('code'))
-    <script>ga('send', 'event', 'promocode', "{{ Session::get('code') }}");</script>
+@if (Session::has('codes'))
+    <script>ga('send', 'event', 'promocode', "{{ Session::get('codes') }}");</script>
 @else
     <script>ga('send', 'pageview');</script>
 @endif

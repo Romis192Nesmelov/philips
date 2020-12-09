@@ -64,7 +64,7 @@
 </script>
 
 @if (Session::has('code'))
-    <script>ga('send', 'event', "{{ Session::get('code') }}", '0');</script>
+    <script>ga('send', 'event', 'promocode', "{{ Session::get('code') }}");</script>
 @else
     <script>ga('send', 'pageview');</script>
 @endif

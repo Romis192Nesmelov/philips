@@ -53,7 +53,7 @@ class CodeController extends BasicController
         }
 
         Session::flash('code',$codeNumber);
-        
+
         $code->on_time = time();
         $code->user_id = Auth::user()->id;
         $code->save();

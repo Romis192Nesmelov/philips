@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Validator;
 use Config;
 use Exception;
+use Illuminate\Support\Facades\Session;
 
 use App\PromoCode;
 use App\DiscountCode;
@@ -44,12 +45,15 @@ class CodeController extends BasicController
             return redirect('/codes')->withErrors($e->validator->errors());
         }
 
-        if (!$code = PromoCode::where('code',strtolower(trim($request->input('code'))))->where('on_time','')->first()) {
+        $codeNumber = strtolower(trim($request->input('code')));
+        if (!$code = PromoCode::where('code',$codeNumber)->where('on_time','')->first()) {
             $request->flash();
             $this->errors->add('code','Этот промокод уже был использован');
             return redirect('/codes')->withErrors($this->errors);
         }
 
+        Session::flash('code',$codeNumber);
+        
         $code->on_time = time();
         $code->user_id = Auth::user()->id;
         $code->save();
